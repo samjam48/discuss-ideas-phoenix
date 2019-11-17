@@ -4,7 +4,6 @@ defmodule Discuss.TopicController do
   alias Discuss.Topic
 
 
-
   def index(conn, _params) do
     topics = Repo.all(Topic)
     render conn, "index.html", topics: topics
@@ -72,18 +71,5 @@ defmodule Discuss.TopicController do
     conn
     |> put_flash(:info, "Topic Deleted")
     |> redirect(to: topic_path(conn, :index))
-
-
-    # case Repo.delete(topic) do
-    #   {:ok, _topic} ->
-    #     conn
-    #     |> put_flash(:info, "Topic Deleted")
-    #     |> redirect(to: topic_path(conn, :index))
-    #   {:error, changeset} ->
-    #     conn
-    #     |> put_flash(:info, "Could not delete!!!")
-    #     |> redirect(to: topic_path(conn, :index))
-    # end
-
   end
 end
