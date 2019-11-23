@@ -5,6 +5,7 @@ defmodule Discuss.Topic do
   schema "topics" do
     field :title, :string
     field :details, :string
+    belongs_to :user, Discuss.User
   end
 
   # Validate a model before it gets put into the DB
