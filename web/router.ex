@@ -1,6 +1,7 @@
 defmodule Discuss.Router do
   use Discuss.Web, :router
 
+  # pre-processing we send can calls throughh
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -16,7 +17,22 @@ defmodule Discuss.Router do
   scope "/", Discuss do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    # get "/", TopicController, :index
+    # get "/topics/new", TopicController, :new
+    # post "/topics", TopicController, :create
+    # get "/topics/:id/edit", TopicController, :edit
+    # put "/topics/:id", TopicController, :update
+    # get "/topics/:id", TopicController, :delete
+
+    resources "/", TopicController
+  end
+
+  scope "/auth", Discuss do
+    pipe_through :browser
+
+    # handle dynamic provider, e.g. facebook or github
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
   end
 
   # Other scopes may use custom stacks.
