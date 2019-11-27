@@ -6,6 +6,7 @@ defmodule Discuss.Topic do
     field :title, :string
     field :details, :string
     belongs_to :user, Discuss.User
+    has_many :comments, Discuss.Comment
   end
 
   # Validate a model before it gets put into the DB
