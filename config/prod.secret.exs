@@ -14,7 +14,7 @@ config :discuss, Discuss.Endpoint,
 # Configure your database
 config :discuss, Discuss.Repo,
   ssl: true,
-  url: database_url,
+  url: System.get_env("DATABASE_URL"),
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
