@@ -19,6 +19,8 @@ defmodule Discuss.AuthController do
       username: auth.info.nickname,
       provider: auth.provider
     }
+    IO.inspect(user_params)
+
     changeset = User.changeset(%User{}, user_params)
 
     signin(conn, changeset)
