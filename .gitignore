@@ -7,6 +7,7 @@
 /doc
 /.fetch
 *.beam
+.env
 
 # Generated on crash by the VM
 erl_crash.dump
@@ -28,6 +29,6 @@ erl_crash.dump
 
 # /config/prod.secret.exs
 # /config/*.secret.exs
-
-
+config/config.backup.exs
+config/prod.secret.backup.exs
 
