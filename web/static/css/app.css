@@ -1,4 +1,9 @@
 /* This file is for your main application css. */
+:root {
+  --warm-black: #0e3b43;
+  --text-grey: #707c73;
+  --mint-green: #c9ffe2;
+}
 
 .help-block {
   color: red;
@@ -13,7 +18,7 @@
 }
 
 .comment-container {
-  background-color: #c9ffe2;
+  background-color: var(--mint-green);
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
@@ -30,11 +35,11 @@
 }
 
 .comment-user {
-  color: #4b7f52;
+  color: var(--warm-black);
 }
 
 .comment-date {
-  color: #839788;
+  color: var(--text-grey);
 }
 
 .comment-extra {
