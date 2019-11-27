@@ -17,6 +17,8 @@
   margin-bottom: 25px;
 }
 
+/* --------------- Idea Page ---------------- */
+
 .comment-container {
   background-color: var(--mint-green);
   margin: 10px;
@@ -44,4 +46,19 @@
 
 .comment-extra {
   padding: 2px 3px;
+}
+
+/* --------------- Home Page ---------------- */
+
+.collection-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.topic-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
 }
