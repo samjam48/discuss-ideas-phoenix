@@ -1,4 +1,9 @@
 /* This file is for your main application css. */
+:root {
+  --warm-black: #0e3b43;
+  --text-grey: #707c73;
+  --mint-green: #c9ffe2;
+}
 
 .help-block {
   color: red;
@@ -10,4 +15,33 @@
 .form-group {
   position: relative;
   margin-bottom: 25px;
+}
+
+.comment-container {
+  background-color: var(--mint-green);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px #888888;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-content {
+  background-color: white;
+  margin-bottom: 2px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.comment-user {
+  color: var(--warm-black);
+}
+
+.comment-date {
+  color: var(--text-grey);
+}
+
+.comment-extra {
+  padding: 2px 3px;
 }
