@@ -11,3 +11,32 @@
   position: relative;
   margin-bottom: 25px;
 }
+
+.comment-container {
+  background-color: #c9ffe2;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px #888888;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-content {
+  background-color: white;
+  margin-bottom: 2px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.comment-user {
+  color: #4b7f52;
+}
+
+.comment-date {
+  color: #839788;
+}
+
+.comment-extra {
+  padding: 2px 3px;
+}

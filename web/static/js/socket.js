@@ -48,15 +48,22 @@ const renderComment = event => {
 
 const commentTemplate = comment => {
   let email = "Anonymous";
+  let date = comment.inserted_at.slice(0, 10);
   if (comment.user) {
+    console.log(comment);
     email = comment.user.email;
   }
 
   return `
-    <li class='collection-item'>
+    <li class="comment-container">
+      <div class="comment-content">
       ${comment.content}
-      <div class="secondary-content">
+      </div>
+      <div class="comment-extra comment-user">
         ${email}
+      </div>
+      <div class="comment-extra comment-date">
+        ${date}
       </div>
     </li>
   `;
