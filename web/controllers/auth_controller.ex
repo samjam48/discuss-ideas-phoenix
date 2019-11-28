@@ -4,20 +4,12 @@ defmodule Discuss.AuthController do
 
   alias Discuss.User
 
-  # def callback(conn, params) do
-  #   IO.puts "++++++++++"
-  #   IO.inspect(conn.assigns)
-  #   IO.puts "++++++++++"
-  #   IO.inspect(params)
-  #   IO.puts "++++++++++"
-  # end
-
-  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params ) do
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, params ) do
     user_params = %{
       token: auth.credentials.token,
       email: auth.info.email,
       username: auth.info.nickname,
-      provider: auth.provider
+      provider: params["provider"]
     }
     IO.inspect(user_params)
 
