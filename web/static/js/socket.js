@@ -7,6 +7,10 @@ import { Socket } from "phoenix";
 
 let socket = new Socket("/socket", { params: { token: window.userToken } });
 
+console.log("window userToken", window);
+console.log("window userToken", window.userToken);
+console.log("socket", socket);
+
 socket.connect();
 
 const createSocket = topicId => {
