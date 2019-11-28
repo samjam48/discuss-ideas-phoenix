@@ -7,10 +7,6 @@ import { Socket } from "phoenix";
 
 let socket = new Socket("/socket", { params: { token: window.userToken } });
 
-console.log("window userToken", window);
-console.log("window userToken", window.userToken);
-console.log("socket", socket);
-
 socket.connect();
 
 const createSocket = topicId => {
@@ -18,7 +14,7 @@ const createSocket = topicId => {
   channel
     .join()
     .receive("ok", resp => {
-      console.log(resp);
+      // console.log(resp);
       renderCommentsList(resp.comments);
     })
     .receive("error", resp => {
@@ -54,7 +50,6 @@ const commentTemplate = comment => {
   let email = "Anonymous";
   let date = comment.inserted_at.slice(0, 10);
   if (comment.user) {
-    console.log(comment);
     email = comment.user.email;
   }
 
