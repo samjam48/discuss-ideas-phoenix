@@ -14,8 +14,6 @@ defmodule Discuss.CommentsChannel do
   end
 
   def handle_in(name, %{"content" => content}, socket) do
-    # IO.inspect(content)
-
     topic = socket.assigns.topic
     user_id = socket.assigns.user_id
 
