@@ -11,7 +11,7 @@ config :discuss,
 
 # Configures the endpoint
 config :discuss, Discuss.Endpoint,
-  url: [host: "discuss-ideas.herokuapp.com"],
+  url: [host: System.get_env("HOST")],
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: Discuss.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Discuss.PubSub,
@@ -39,3 +39,6 @@ config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: System.get_env("GITHUB_CLIENT_ID"),
   client_secret: System.get_env("GITHUB_CLIENT_SECRET")
 
+  IO.puts("++++++ system env +++++++++++")
+  IO.inspect(System.get_env("GITHUB_CLIENT_ID"))
+  IO.puts(System.get_env("GITHUB_CLIENT_ID"))

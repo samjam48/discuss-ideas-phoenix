@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :discuss, Discuss.Endpoint,
   http: [port: {:system, "PORT"}],
-  url:  [scheme: "https", host: "discuss-ideas.herokuapp.com", port: 443],
+  url: [host: System.get_env("HOST"), port: System.get_env("URL_PORT")],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/manifest.json"
 
