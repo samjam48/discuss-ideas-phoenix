@@ -1,8 +1,3 @@
-# This file is responsible for configuring your application
-# and its dependencies with the aid of the Mix.Config module.
-#
-# This configuration file is loaded before any dependency and
-# is restricted to this project.
 use Mix.Config
 
 # General application configuration
@@ -11,7 +6,7 @@ config :discuss,
 
 # Configures the endpoint
 config :discuss, Discuss.Endpoint,
-  url: [host: "discuss-ideas.herokuapp.com"],
+  url: [host: System.get_env("HOST")],
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: Discuss.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Discuss.PubSub,
@@ -38,4 +33,3 @@ config :ueberauth, Ueberauth,
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: System.get_env("GITHUB_CLIENT_ID"),
   client_secret: System.get_env("GITHUB_CLIENT_SECRET")
-
