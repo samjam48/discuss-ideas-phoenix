@@ -30,6 +30,7 @@ The app uses a PostgreSQL database. Writing to the database is quite different i
 #### Websockets
 
 Websockets allow a permanent connection so that data displayed to the user can be updated live without the user needing to reload. Making the comments with websockets means that they become a live feature and the user will see new comments from any other user as they add them and they can be used as a real-time conversation.
+
 The websocket is established in the front end with a javascript file which connects to the back end establishes a connection to whichever channel of comments the user should see relating to that idea.
 
 ## Run locally
