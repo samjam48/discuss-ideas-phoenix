@@ -1,8 +1,3 @@
-# This file is responsible for configuring your application
-# and its dependencies with the aid of the Mix.Config module.
-#
-# This configuration file is loaded before any dependency and
-# is restricted to this project.
 use Mix.Config
 
 # General application configuration
@@ -38,7 +33,3 @@ config :ueberauth, Ueberauth,
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: System.get_env("GITHUB_CLIENT_ID"),
   client_secret: System.get_env("GITHUB_CLIENT_SECRET")
-
-  IO.puts("++++++ system env +++++++++++")
-  IO.inspect(System.get_env("GITHUB_CLIENT_ID"))
-  IO.puts(System.get_env("GITHUB_CLIENT_ID"))
